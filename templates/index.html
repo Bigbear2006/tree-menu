@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Menu List{% endblock title %}
+
+{% block content %}
+{% for menu in menu_set %}
+<div class="menu_link">
+    <h1><a href="{% url 'menu-detail' menu.id %}">{{ menu.title }}</a></h1>
+</div>
+{% endfor %}
+{% endblock content %}

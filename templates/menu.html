@@ -1,0 +1,10 @@
+{% load draw_menu %}
+
+<div class="menu">
+    <a href="{% url 'menu-detail' menu.id %}"><p>{{ menu.title }}</p></a>
+    <div class="children_menu">
+       {% for child in menu.children.all %}
+       {% draw_menu child %}
+       {% endfor %}
+    </div>
+</div>
